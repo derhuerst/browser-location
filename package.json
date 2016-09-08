@@ -1,0 +1,13 @@
+{
+	"name":         "browser-location",
+	"description":  "Get your current location from the Browser.",
+	"version":      "0.1.0",
+	"main":         "index.js",
+	"files":        ["index.js"],
+	"keywords":     ["geolocation", "location", "gps", "browser", "api"],
+	"author":       "Jannis R <mail@jannisr.de>",
+	"homepage":     "https://github.com/derhuerst/browser-location",
+	"repository":   "git://github.com/derhuerst/browser-location.git",
+	"license":      "ISC",
+	"engines":      {"node": ">=6"}
+}
