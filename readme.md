@@ -18,7 +18,13 @@ npm install derhuerst/browser-location
 
 ## Usage
 
-todo
+```js
+const location = require('browser-location')
+
+location()
+	.then((l) => console.log(l))
+	.catch((err) => console.error(err))
+```
 
 
 ## Contributing
