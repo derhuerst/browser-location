@@ -1,6 +1,11 @@
 # *browser-location*
 
-**Get your current location from the Browser.**
+**Get your current location from the Browser**, using the [geolocation Web API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation).
+
+See also:
+
+- [`location`](https://github.com/derhuerst/location) for Node
+- [`isomorphic-location`](https://github.com/derhuerst/isomorphic-location) for Browsers & Node
 
 [![npm version](https://img.shields.io/npm/v/browser-location.svg)](https://www.npmjs.com/package/browser-location)
 [![build status](https://img.shields.io/travis/derhuerst/browser-location.svg)](https://travis-ci.org/derhuerst/browser-location)
@@ -18,12 +23,27 @@ npm install derhuerst/browser-location
 
 ## Usage
 
+```
+location([timeout]) // 10s by default
+```
+
 ```js
 const location = require('browser-location')
 
 location()
 	.then((l) => console.log(l))
 	.catch((err) => console.error(err))
+```
+
+This will give you something similar to the following:
+
+```js
+{
+	  latitude:  52.547172
+	, longitude: 13.347745
+	, precision: 65  // in meters
+	, native:    true
+}
 ```
 
 
