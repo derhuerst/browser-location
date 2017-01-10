@@ -30,9 +30,9 @@ so(function* () {
 	yield runner.url(`http://localhost:8080/index.html`)
 
 	const json = yield runner.execute(() => document.getElementById('out').innerText)
-	console.info(json)
-	assert.doesNotThrow(() => JSON.parse(json))
-	const data = JSON.parse(json)
+	console.info(json.value)
+	assert.doesNotThrow(() => JSON.parse(json.value))
+	const data = JSON.parse(json.value)
 
 	assert.strictEqual(typeof data.latitude, 'number')
 	assert.strictEqual(typeof data.longitude, 'number')
