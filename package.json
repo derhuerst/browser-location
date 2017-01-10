@@ -7,7 +7,15 @@
 	"keywords":     ["geolocation", "location", "gps", "browser", "api"],
 	"author":       "Jannis R <mail@jannisr.de>",
 	"homepage":     "https://github.com/derhuerst/browser-location",
-	"repository":   "git://github.com/derhuerst/browser-location.git",
+	"repository":   "derhuerst/browser-location",
+	"bugs":         "https://github.com/derhuerst/browser-location/issues",
 	"license":      "ISC",
-	"engines":      {"node": ">=6"}
+	"engines":      {"node": ">=6"},
+	"devDependencies": {
+		"stream-sink": "^2.0.0",
+		"umd": "^3.0.1"
+	},
+	"scripts": {
+		"bundle": "cat index.js | node bundle.js > test/loc.js"
+	}
 }
