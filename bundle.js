@@ -4,7 +4,7 @@ const sink = require('stream-sink')
 const umd = require('umd')
 const pkg = require('./package.json')
 
-const banner = `'use strict'\n`
+const banner = `'use strict';\n`
 
 process.stdin
 .pipe(sink())

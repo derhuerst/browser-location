@@ -22,5 +22,5 @@ const loc = (timeout = 10000) => new Promise((resolve, reject) => {
 	}, timeout)
 })
 
-module.exports = loc
+if (module) module.exports = loc
 return loc
