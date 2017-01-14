@@ -13,9 +13,13 @@
 	"engines":      {"node": ">=6"},
 	"devDependencies": {
 		"stream-sink": "^2.0.0",
-		"umd": "^3.0.1"
+		"umd": "^3.0.1",
+		"http-server": "^0.9.0",
+		"webdriverio": "^4.6.1",
+		"so": "^1.0.1"
 	},
 	"scripts": {
-		"bundle": "cat index.js | node bundle.js > test/loc.js"
+		"bundle": "cat index.js | node bundle.js > test/loc.js",
+		"test": "node test/index.js"
 	}
 }
