@@ -32,7 +32,7 @@ so(function* () {
 	const json = runner.execute(() =>
 		document.getElementById('out').innerText
 	)
-	console.info('generated JSON', json.value)
+	console.info('generated JSON', json)
 	assert.doesNotThrow(() => JSON.parse(json.value))
 	const data = JSON.parse(json.value)
 
