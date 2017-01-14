@@ -29,8 +29,11 @@ so(function* () {
 	yield runner.init()
 	yield runner.url(`http://localhost:8080/index.html`)
 
-	const json = yield runner.waitForText('#out', 10000)
-	console.info('generated JSON', json)
+	yield runner.waitForText('#out', 10000)
+	const json = yield runner.execute(() =>
+		document.getElementById('out').innerText
+	)
+	console.info('generated JSON', json.value)
 	assert.doesNotThrow(() => JSON.parse(json.value))
 	const data = JSON.parse(json.value)
 
