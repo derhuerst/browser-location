@@ -29,7 +29,7 @@ so(function* () {
 	yield runner.init()
 	yield runner.url(`http://localhost:8080/index.html`)
 
-	const json = runner.execute(() =>
+	const json = yield runner.execute(() =>
 		document.getElementById('out').innerText
 	)
 	console.info('generated JSON', json)
