@@ -39,7 +39,7 @@ so(function* () {
 
 	assert.strictEqual(typeof data.latitude, 'number')
 	assert.strictEqual(typeof data.longitude, 'number')
-	assert.strictEqual(typeof data.precision, 'number')
+	assert.strictEqual(typeof data.accuracy, 'number')
 	assert.strictEqual(typeof data.native, 'boolean')
 
 	console.log('Done.')
