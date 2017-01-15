@@ -9,7 +9,7 @@ before_script:
 script:
   - npm test
 env:
-  - BROWSER=Chrome PLATFORM="Windows 10"
+  - BROWSER=Safari PLATFORM=iOS
 addons:
   sauce_connect:
     username: 'derhuerst'

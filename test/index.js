@@ -21,7 +21,8 @@ const runner = webdriver.remote({
 	desiredCapabilities: {
 		build, 'tunnel-identifier': job, name: 'test',
 		browserName: browser, platform,
-		recordScreenshots: false
+		recordScreenshots: false,
+		appiumVersion: '1.6.3', 'platformVersion': '10.0'
 	}
 })
 
