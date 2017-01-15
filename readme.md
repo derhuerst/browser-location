@@ -7,6 +7,8 @@ See also:
 - [`location`](https://github.com/derhuerst/location) for Node
 - [`isomorphic-location`](https://github.com/derhuerst/isomorphic-location) for Browsers & Node
 
+**Help Wanted!** Currently, tests are running with Chrome on Windows, but I'd like to extend them to iOS & Android. Contributions welcome!
+
 [![npm version](https://img.shields.io/npm/v/browser-location.svg)](https://www.npmjs.com/package/browser-location)
 [![build status](https://img.shields.io/travis/derhuerst/browser-location.svg)](https://travis-ci.org/derhuerst/browser-location)
 [![dependency status](https://img.shields.io/david/derhuerst/browser-location.svg)](https://david-dm.org/derhuerst/browser-location)
