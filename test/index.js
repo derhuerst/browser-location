@@ -22,7 +22,8 @@ const runner = webdriver.remote({
 		build, 'tunnel-identifier': job, name: 'test',
 		browserName: browser, platform,
 		recordScreenshots: false,
-		appiumVersion: '1.6.3', 'platformVersion': '10.0'
+		appiumVersion: '1.6.3', platformVersion: '10.0'
+		version: '10.0', deviceName: 'iPhone 7 Plus Simulator'
 	}
 })
 
