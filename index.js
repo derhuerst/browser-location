@@ -5,7 +5,6 @@ const getLocation = (timeout, cb) => {
 		cb = timeout
 		timeout = 10000
 	}
-	console.error('timeout', timeout, 'cb', cb)
 
 	if (!navigator && !navigator.geolocation) {
 		return cb(new Error('geolocation api not supported'))

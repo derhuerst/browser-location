@@ -1,7 +1,7 @@
 {
 	"name": "@derhuerst/browser-location",
 	"description":  "Get your current location from the Browser.",
-	"version":      "0.2.0",
+	"version":      "0.2.1",
 	"main": "./dist/index.js",
 	"module": "./index.js",
 	"files": ["index.js", "dist"],
