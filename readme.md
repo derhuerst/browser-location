@@ -19,7 +19,7 @@ See also:
 ## Installing
 
 ```shell
-npm install derhuerst/browser-location
+npm install @derhuerst/browser-location
 ```
 
 

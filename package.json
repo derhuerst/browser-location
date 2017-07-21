@@ -1,5 +1,5 @@
 {
-	"name":         "browser-location",
+	"name": "@derhuerst/browser-location",
 	"description":  "Get your current location from the Browser.",
 	"version":      "0.1.0",
 	"main": "./dist/index.js",
