@@ -28,9 +28,10 @@ npm install @derhuerst/browser-location
 ```js
 const location = require('browser-location')
 
-location()
-.then(console.log)
-.catch(console.error)
+location((err, loc) => {
+	if (err) console.error(err)
+	else console.log(loc)
+})
 ```
 
 This will give you something similar to the following:
@@ -47,10 +48,10 @@ This will give you something similar to the following:
 ## API
 
 ```js
-location([timeout])
+location([timeout], cb)
 ```
 
-`timeout` is in milliseconds and `10 * 1000` by default.
+`timeout` is in milliseconds, optional and `10 * 1000` by default. `cb(err, loc)` follows the [Node callback convention](https://stackoverflow.com/a/40512067).
 
 
 ## Contributing

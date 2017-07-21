@@ -1,29 +1,33 @@
 'use strict'
 
-const getLocation = (timeout = 10000) => {
-	return new Promise((resolve, reject) => {
-		if (!navigator && !navigator.geolocation) {
-			return reject(new Error('geolocation api not supported'))
-		}
+const getLocation = (timeout, cb) => {
+	if ('function' === typeof timeout) {
+		cb = timeout
+		timeout = 10000
+	}
+	console.error('timeout', timeout, 'cb', cb)
 
-		let succeeded = false
-		const onSuccess = (loc) => {
-			if (succeeded) return
-			succeeded = true
-			resolve({
-				latitude:  loc.coords.latitude,
-				longitude: loc.coords.longitude,
-				accuracy:  loc.coords.accuracy,
-				native:    true
-			})
-		}
-		const onError = (err) => reject(err || new Error('unknown error'))
+	if (!navigator && !navigator.geolocation) {
+		return cb(new Error('geolocation api not supported'))
+	}
 
-		navigator.geolocation.getCurrentPosition(onSuccess, onError)
-		setTimeout(() => {
-			if (!succeeded) reject(new Error('timeout'))
-		}, timeout)
-	})
+	let succeeded = false
+	const onSuccess = (loc) => {
+		if (succeeded) return
+		succeeded = true
+		cb(null, {
+			latitude:  loc.coords.latitude,
+			longitude: loc.coords.longitude,
+			accuracy:  loc.coords.accuracy,
+			native:    true
+		})
+	}
+	const onError = (err) => cb(err || new Error('unknown error'))
+
+	navigator.geolocation.getCurrentPosition(onSuccess, onError)
+	setTimeout(() => {
+		if (!succeeded) cb(new Error('timeout'))
+	}, timeout)
 }
 
 module.exports = getLocation
