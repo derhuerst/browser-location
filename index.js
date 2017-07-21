@@ -1,25 +1,29 @@
 'use strict'
 
-const loc = (timeout = 10000) => new Promise((resolve, reject) => {
-	if (!navigator && !navigator.geolocation)
-		return reject(new Error('geolocation api not supported'))
+const getLocation = (timeout = 10000) => {
+	return new Promise((resolve, reject) => {
+		if (!navigator && !navigator.geolocation) {
+			return reject(new Error('geolocation api not supported'))
+		}
 
-	let succeeded = false
-	const success = (loc) => {
-		succeeded = true
-		resolve({
-			latitude:  loc.coords.latitude,
-			longitude: loc.coords.longitude,
-			accuracy:  loc.coords.accuracy,
-			native:    true
-		})
-	}
-	const error = (err) => reject(err || new Error('unknown error'))
+		let succeeded = false
+		const onSuccess = (loc) => {
+			if (succeeded) return
+			succeeded = true
+			resolve({
+				latitude:  loc.coords.latitude,
+				longitude: loc.coords.longitude,
+				accuracy:  loc.coords.accuracy,
+				native:    true
+			})
+		}
+		const onError = (err) => reject(err || new Error('unknown error'))
 
-	navigator.geolocation.getCurrentPosition(success, error)
-	setTimeout(() => {
-		if (!succeeded) reject(new Error('timeout'))
-	}, timeout)
-})
+		navigator.geolocation.getCurrentPosition(onSuccess, onError)
+		setTimeout(() => {
+			if (!succeeded) reject(new Error('timeout'))
+		}, timeout)
+	})
+}
 
-module.exports = loc
+module.exports = getLocation
