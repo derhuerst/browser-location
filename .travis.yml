@@ -1,17 +1,9 @@
 sudo: false
 language: node_js
 node_js:
+  # don't run too many tests on Sauce Labs
   - 'stable'
-before_script:
-  - npm run bundle
-  - http-server test -s &
-  - sleep 1
+  - '6'
 script:
+  - npm run build
   - npm test
-env:
-  - BROWSER=Chrome PLATFORM="Windows 10"
-addons:
-  sauce_connect:
-    username: 'derhuerst'
-    access_key:
-      secure: 'sS9y6DfQvo5GgokR+nwckmmUNgvwqjJ21C7/WpI7wvROxCOpDKS0PKhf7aD42hcG/heAEu7y0CUk8hRrcCibP1D65DOj8rhJ8BOwLyuRcAIkEpJymLJkJmX6kZZNvBVehDNacIC/aN+/tHyAxA9aFD1uenSh0hAWqDTwhdum8JFTePp7ibbSSRPWYKPpNAngiSBvhmkBV9r7Pqj8RT7plxe5Rfs1gZbEzDjjR88khcCNvapjNxqWILNcD1Gf44YW87ShwFLIXhSmeznvHMdHUv1r4A80oJjCtKOzWaIV0rSZIdvja1dxVrAivm7nQsZUaH4xDslfwd9d2TmLFnmTSfTL55Refp0iLuTkmrLL3e/uIJXw6h8Ccurm0/Hzs+hqWTG+ON9L81f+sqKyWE37G2t9AkKsVPWZCAG6CmAgq/v+LYXtu2Cth1L09Ptm70Uk64YsaX7jHXnNMfTpNnZ30m07JwdnE7PFdostk0RKiJ4q5pitTw/IdLDfB6/6ZdY/WWuvp3y//nf8voFu7VBz/WoYZ6C5q0FzRJ/ONAIZQbJePEHvgONn1jrfCGwOy54N9NWSSFEMc/HU/60+xhQRmzxAl8BI33SRK+ohAFpafFP/Y+gCPgXooB2V6C6VRLZ0ZjQ6Su+xp0uzmJyA9IxNflgpRfyr0mEMf3ALzHfs2Yg='
