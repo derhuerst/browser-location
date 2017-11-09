@@ -26,7 +26,7 @@ npm install @derhuerst/browser-location
 ## Usage
 
 ```js
-const location = require('browser-location')
+const location = require('@derhuerst/browser-location')
 
 location((err, loc) => {
 	if (err) console.error(err)

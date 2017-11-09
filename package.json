@@ -22,22 +22,9 @@
 		"tap-min": "^1.2.1",
 		"tape": "^4.7.0"
 	},
-	"browserify": {
-		"transform": [
-			[
-				"babelify",
-				{
-					"presets": [
-						"es2015"
-					],
-					"global": true
-				}
-			]
-		]
-	},
 	"scripts": {
 		"build": "babel index.js --presets es2015 --out-dir dist",
-		"test": "browserify test.js | chutney | tap-min",
+		"test": "browserify -g [babelify --presets es2015] test.js | chutney | tap-min",
 		"prepublishOnly": "npm run build && npm test"
 	}
 }
