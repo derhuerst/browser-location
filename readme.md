@@ -7,6 +7,7 @@
 [![dependency status](https://img.shields.io/david/derhuerst/browser-location.svg)](https://david-dm.org/derhuerst/browser-location)
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/browser-location.svg)](https://david-dm.org/derhuerst/browser-location#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/browser-location.svg)
+[![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
 
 See also:
 
